@@ -1,0 +1,1 @@
+src/Global.cmj : src/BasicMaterial.cmj src/BasicMaterial.cmi src/Camera.cmj src/Camera.cmi src/CubeGeometry.cmj src/CubeGeometry.cmi src/Matrix4.cmj src/Matrix4.cmi src/Mesh.cmj src/Mesh.cmi src/Node.cmj src/Node.cmi src/Quaternion.cmj src/Quaternion.cmi src/Vector3.cmj src/Vector3.cmi

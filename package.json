@@ -1,0 +1,23 @@
+{
+  "name": "refour",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "res:build": "rescript",
+    "res:dev": "rescript build -w",
+    "tsrun": "tsc && node tsgen/tsgen.js"
+  },
+  "devDependencies": {
+    "vite": "^4.4.5"
+  },
+  "dependencies": {
+    "@rescript/core": "^0.5.0",
+    "@types/node": "^20.8.10",
+    "rescript": "^11.1.0-rc.3",
+    "typescript": "^5.2.2"
+  }
+}

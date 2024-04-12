@@ -1,0 +1,95 @@
+rescript = 1
+g_finger := /Users/Oleksandr_Dubenko/github/refour/node_modules/@rescript/core/lib/ocaml/install.stamp
+rule astj
+  command = /Users/Oleksandr_Dubenko/github/refour/node_modules/rescript/darwinarm64/bsc.exe  -bs-v 11.1.0-rc.3 -bs-jsx-module Rsx -uncurried -open RescriptCore -absname -bs-ast -o $out $i
+o src/Ops.ast : astj ../../src/Ops.res
+rule deps
+  command = /Users/Oleksandr_Dubenko/github/refour/node_modules/rescript/darwinarm64/bsb_helper.exe -hash 2529be777ed289ec12185c8f32db8c5a $in
+  restat = 1
+o src/Ops.d : deps src/Ops.ast
+rule mij
+  command = /Users/Oleksandr_Dubenko/github/refour/node_modules/rescript/darwinarm64/bsc.exe -I src -I /Users/Oleksandr_Dubenko/github/refour/node_modules/@rescript/core/lib/ocaml -open RescriptCore  -uncurried -bs-package-name refour -bs-package-output es6:$in_d:.bs.js -bs-v $g_finger $i
+  dyndep = 1
+  restat = 1
+o src/Ops.cmj src/Ops.cmi ../../src/Ops.bs.js : mij src/Ops.ast
+o src/Rsx.ast : astj ../../src/Rsx.res
+o src/Rsx.d : deps src/Rsx.ast
+o src/Rsx.cmj src/Rsx.cmi ../../src/Rsx.bs.js : mij src/Rsx.ast
+o src/Html.ast : astj ../../src/Html.res
+o src/Html.d : deps src/Html.ast
+o src/Html.cmj src/Html.cmi ../../src/Html.bs.js : mij src/Html.ast
+o src/Mesh.ast : astj ../../src/Mesh.res
+o src/Mesh.d : deps src/Mesh.ast
+o src/Mesh.cmj src/Mesh.cmi ../../src/Mesh.bs.js : mij src/Mesh.ast
+o src/Node.ast : astj ../../src/Node.res
+o src/Node.d : deps src/Node.ast
+o src/Node.cmj src/Node.cmi ../../src/Node.bs.js : mij src/Node.ast
+o src/Color.ast : astj ../../src/Color.res
+o src/Color.d : deps src/Color.ast
+o src/Color.cmj src/Color.cmi ../../src/Color.bs.js : mij src/Color.ast
+o src/Utils.ast : astj ../../src/Utils.res
+o src/Utils.d : deps src/Utils.ast
+o src/Utils.cmj src/Utils.cmi ../../src/Utils.bs.js : mij src/Utils.ast
+o src/WebGL.ast : astj ../../src/WebGL.res
+o src/WebGL.d : deps src/WebGL.ast
+o src/WebGL.cmj src/WebGL.cmi ../../src/WebGL.bs.js : mij src/WebGL.ast
+o src/Camera.ast : astj ../../src/Camera.res
+o src/Camera.d : deps src/Camera.ast
+o src/Camera.cmj src/Camera.cmi ../../src/Camera.bs.js : mij src/Camera.ast
+o src/Global.ast : astj ../../src/Global.res
+o src/Global.d : deps src/Global.ast
+o src/Global.cmj src/Global.cmi ../../src/Global.bs.js : mij src/Global.ast
+o src/Parser.ast : astj ../../src/Parser.res
+o src/Parser.d : deps src/Parser.ast
+o src/Parser.cmj src/Parser.cmi ../../src/Parser.bs.js : mij src/Parser.ast
+o src/Frustum.ast : astj ../../src/Frustum.res
+o src/Frustum.d : deps src/Frustum.ast
+o src/Frustum.cmj src/Frustum.cmi ../../src/Frustum.bs.js : mij src/Frustum.ast
+o src/Matrix4.ast : astj ../../src/Matrix4.res
+o src/Matrix4.d : deps src/Matrix4.ast
+o src/Matrix4.cmj src/Matrix4.cmi ../../src/Matrix4.bs.js : mij src/Matrix4.ast
+o src/Sampler.ast : astj ../../src/Sampler.res
+o src/Sampler.d : deps src/Sampler.ast
+o src/Sampler.cmj src/Sampler.cmi ../../src/Sampler.bs.js : mij src/Sampler.ast
+o src/Testing.ast : astj ../../src/Testing.res
+o src/Testing.d : deps src/Testing.ast
+o src/Testing.cmj src/Testing.cmi ../../src/Testing.bs.js : mij src/Testing.ast
+o src/Texture.ast : astj ../../src/Texture.res
+o src/Texture.d : deps src/Texture.ast
+o src/Texture.cmj src/Texture.cmi ../../src/Texture.bs.js : mij src/Texture.ast
+o src/Vector3.ast : astj ../../src/Vector3.res
+o src/Vector3.d : deps src/Vector3.ast
+o src/Vector3.cmj src/Vector3.cmi ../../src/Vector3.bs.js : mij src/Vector3.ast
+o src/Compiled.ast : astj ../../src/Compiled.res
+o src/Compiled.d : deps src/Compiled.ast
+o src/Compiled.cmj src/Compiled.cmi ../../src/Compiled.bs.js : mij src/Compiled.ast
+o src/Geometry.ast : astj ../../src/Geometry.res
+o src/Geometry.d : deps src/Geometry.ast
+o src/Geometry.cmj src/Geometry.cmi ../../src/Geometry.bs.js : mij src/Geometry.ast
+o src/Material.ast : astj ../../src/Material.res
+o src/Material.d : deps src/Material.ast
+o src/Material.cmj src/Material.cmi ../../src/Material.bs.js : mij src/Material.ast
+o src/TypeArray.ast : astj ../../src/TypeArray.res
+o src/TypeArray.d : deps src/TypeArray.ast
+o src/TypeArray.cmj src/TypeArray.cmi ../../src/TypeArray.bs.js : mij src/TypeArray.ast
+o src/WebGLCube.ast : astj ../../src/WebGLCube.res
+o src/WebGLCube.d : deps src/WebGLCube.ast
+o src/WebGLCube.cmj src/WebGLCube.cmi ../../src/WebGLCube.bs.js : mij src/WebGLCube.ast
+o src/Quaternion.ast : astj ../../src/Quaternion.res
+o src/Quaternion.d : deps src/Quaternion.ast
+o src/Quaternion.cmj src/Quaternion.cmi ../../src/Quaternion.bs.js : mij src/Quaternion.ast
+o src/CubeGeometry.ast : astj ../../src/CubeGeometry.res
+o src/CubeGeometry.d : deps src/CubeGeometry.ast
+o src/CubeGeometry.cmj src/CubeGeometry.cmi ../../src/CubeGeometry.bs.js : mij src/CubeGeometry.ast
+o src/RenderTarget.ast : astj ../../src/RenderTarget.res
+o src/RenderTarget.d : deps src/RenderTarget.ast
+o src/RenderTarget.cmj src/RenderTarget.cmi ../../src/RenderTarget.bs.js : mij src/RenderTarget.ast
+o src/BasicMaterial.ast : astj ../../src/BasicMaterial.res
+o src/BasicMaterial.d : deps src/BasicMaterial.ast
+o src/BasicMaterial.cmj src/BasicMaterial.cmi ../../src/BasicMaterial.bs.js : mij src/BasicMaterial.ast
+o src/OrbitControls.ast : astj ../../src/OrbitControls.res
+o src/OrbitControls.d : deps src/OrbitControls.ast
+o src/OrbitControls.cmj src/OrbitControls.cmi ../../src/OrbitControls.bs.js : mij src/OrbitControls.ast
+o src/WebGLRenderer.ast : astj ../../src/WebGLRenderer.res
+o src/WebGLRenderer.d : deps src/WebGLRenderer.ast
+o src/WebGLRenderer.cmj src/WebGLRenderer.cmi ../../src/WebGLRenderer.bs.js : mij src/WebGLRenderer.ast

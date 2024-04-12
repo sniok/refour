@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>four - three.js in 4KB</title>
+    <style>
+      body {
+        margin: 0;
+        overflow-x: hidden;
+      }
+
+      canvas {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <script type="module">
+      for (const module of Object.values(import.meta.glob('./*.ts'))) await module()
+    </script>
+  </body>
+</html>
